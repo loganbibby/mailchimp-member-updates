@@ -1,0 +1,14 @@
+[DEFAULT]
+log_filename = mailchimp-member-updates.log
+debug = 1
+runfile = runfiles/{listid}
+
+[MAIL]
+server = localhost
+defaultsender = you@example.com
+template = email.html
+
+[MAILCHIMP]
+apikey = xxx
+dc = xxx
+baseurl = http://{dc}.api.mailchimp.com

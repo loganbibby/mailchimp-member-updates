@@ -1,0 +1,6 @@
+{
+  "NotAListID": {
+    "listname": "Your List",
+    "recipients": ["you@example.com"]
+  }
+}

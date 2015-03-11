@@ -1,0 +1,9 @@
+<html>
+  <body>
+    <p>Below are the members added or updated to the <strong>{mailinglist}</strong> mailing list since the last check on {date}.</p>
+    <br />
+    {table}
+    <br />
+    <p>List ID: {listid}</p>
+  </body>
+</html>
