@@ -74,7 +74,7 @@ with open('lists.json', 'r') as fh:
     logger.debug('%d lists loaded' % len(lists))
 
 # create runfiles directory, if needed
-runfiles_dir = os.path.dirname(directory)
+runfiles_dir = os.path.dirname(config.RUNFILE)
 if not os.path.exists(runfiles_dir):
     app.logger.debug('Directory for run files does not exist, creating %s' % runfiles_dir)
     os.makedirs(runfiles_dir)
