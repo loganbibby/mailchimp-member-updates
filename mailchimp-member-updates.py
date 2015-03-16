@@ -73,6 +73,12 @@ with open('lists.json', 'r') as fh:
     lists = json.load(fh)
     logger.debug('%d lists loaded' % len(lists))
 
+# create runfiles directory, if needed
+runfiles_dir = os.path.dirname(directory)
+if not os.path.exists(runfiles_dir):
+    app.logger.debug('Directory for run files does not exist, creating %s' % runfiles_dir)
+    os.makedirs(runfiles_dir)
+
 # establish connection with SMTP server
 try:
     s = smtplib.SMTP(config.MAIL_SERVER, config.MAIL_PORT, timeout=config.MAIL_TIMEOUT)
@@ -159,7 +165,7 @@ for listid, options in lists.iteritems():
 
     try:
         s.sendmail(config.MAIL_DEFAULTSENDER, options['recipients'], msg.as_string())
-        logger.info('Email sent to %s' % ', '.join(recipients))
+        logger.info('Email sent to %s' % ', '.join(options['recipients']))
     except smtplib.SMTPRecipientsRefused, e:
         logger.error('All recipients were refused. Nobody got the mail. %s' % e.recipients)
     except smtplib.SMTPHeloError, e:
