@@ -3,6 +3,7 @@ config.ini
 email.html
 lists.json
 venv/
+runfiles/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
