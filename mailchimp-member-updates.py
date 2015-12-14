@@ -31,7 +31,7 @@ c.add_option('use_ssl', dest='mail_use_ssl', keys='MAIL', type='choice', choices
 c.add_option('username', dest='mail_username', keys='MAIL', type='string')
 c.add_option('password', dest='mail_password', keys='MAIL', type='string')
 c.add_option('timeout', dest='mail_timeout', keys='MAIL', type='int', default=30)
-c.add_option('template', dest='mail_template', keys='MAIL', type='string')
+c.add_option('template', dest='mail_template', keys='MAIL', type='string', default='email.html')
 c.add_file('config.ini')
 
 for key, value in c.parse().__dict__.iteritems():
